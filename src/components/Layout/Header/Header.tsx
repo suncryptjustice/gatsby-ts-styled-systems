@@ -1,22 +1,28 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import Box from "../../Box"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
+type Props = {
+  siteTitle: string
+}
+
+const Header = ({ siteTitle }: Props) => (
+  <Box
+    as="header"
+    sx={{
       background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
-    <div
-      style={{
+    <Box
+      sx={{
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <Box as="h1" sx={{ margin: 0 }}>
         <Link
           to="/"
           style={{
@@ -26,9 +32,9 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
-    </div>
-  </header>
+      </Box>
+    </Box>
+  </Box>
 )
 
 Header.propTypes = {
